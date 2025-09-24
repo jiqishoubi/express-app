@@ -1,9 +1,9 @@
-﻿import { Router } from "express";
-import { authController } from "./auth.controller";
-
-const router = Router();
-
-router.post("/register", authController.register); // 公共接口，允许新用户注册
-router.post("/login", authController.login); // 登录接口，用账号密码换取 JWT
-
-export const authRoutes = router;
+﻿import { Router } from "express"; // 引入 Router 构建路由
+import { authController } from "./auth.controller"; // 引入认证控制器
+// ---------------------------- 分隔线 ----------------------------
+const router = Router(); // 创建路由实例
+// ---------------------------- 分隔线 ----------------------------
+router.post("/register", authController.register); // 注册接口，无需登录
+router.post("/login", authController.login); // 登录接口，无需登录
+// ---------------------------- 分隔线 ----------------------------
+export const authRoutes = router; // 导出认证路由
